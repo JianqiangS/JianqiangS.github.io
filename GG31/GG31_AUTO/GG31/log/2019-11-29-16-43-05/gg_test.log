@@ -1,0 +1,1179 @@
+2019-11-29 16:43:05 : "GG3.1" OSv"2.0.3" system test
+2019-11-29 16:43:10 : "GG3.1" OSv"2.0.3" system test
+
+[1;34m-->>  Master_Port : Check os system differential upgrade[0m
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check system config status info[0m
+
+--------------------------------------------------------------------------------
+switch_vino_rdesktop.sh enable
+set_wifi.sh UISEE-GUEST uiseeWelcome
+set_rtk_port.sh 2015
+switch_net.sh internal
+switch_iptables.sh enable
+switch_ftp.sh enable
+switch_rsync.sh enable
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check os system upgrade (2019-11-15-system-img-GG3.1-v2.0.3.tar)[0m
+
+--------------------------------------------------------------------------------
+apply_os.sh -f /home/worker/GG31/lib/file_attached/os_cfg/2019-11-15-system-img-GG3.1-v2.0.3.tar
+[1;32m start apply os file /home/worker/GG31/lib/file_attached/os_cfg/2019-11-15-system-img-GG3.1-v2.0.3.tar [0m
+[1;32m doing upgrade master [0m
+[1;32m upgrade master done [0m
+[1;32m doing upgrade slave [0m
+Welcome to Ubuntu 16.04 LTS (GNU/Linux 4.4.38+ aarch64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+565 packages can be updated.
+291 updates are security updates.
+
+New release '18.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+prepare install vsftpd....
+(Reading database ... 135370 files and directories currently installed.)
+Preparing to unpack .../ssl-cert_1.0.37_all.deb ...
+Unpacking ssl-cert (1.0.37) over (1.0.37) ...
+Setting up ssl-cert (1.0.37) ...
+Processing triggers for man-db (2.7.5-1) ...
+(Reading database ... 135370 files and directories currently installed.)
+Preparing to unpack .../vsftpd_3.0.3-3ubuntu2_arm64.deb ...
+Unpacking vsftpd (3.0.3-3ubuntu2) over (3.0.3-3ubuntu2) ...
+Setting up vsftpd (3.0.3-3ubuntu2) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for systemd (229-4ubuntu6) ...
+ftpsvr/
+ftpsvr/vsftpd
+ftpsvr/vsftpd_user_list
+ftpsvr/vsftpd.conf
+install vsftpd done!
+enable vino remote desktop
+please reboot to make it work
+switch to internal
+please run
+ssh slave sudo reboot; reboot
+to enable setting!
+iptables enable
+please run
+sudo reboot
+to enable setting!
+enable ftp server
+prepare install vsftpd....
+(Reading database ... 135370 files and directories currently installed.)
+Preparing to unpack .../ssl-cert_1.0.37_all.deb ...
+Unpacking ssl-cert (1.0.37) over (1.0.37) ...
+Setting up ssl-cert (1.0.37) ...
+Processing triggers for man-db (2.7.5-1) ...
+(Reading database ... 135370 files and directories currently installed.)
+Preparing to unpack .../vsftpd_3.0.3-3ubuntu2_arm64.deb ...
+Unpacking vsftpd (3.0.3-3ubuntu2) over (3.0.3-3ubuntu2) ...
+Setting up vsftpd (3.0.3-3ubuntu2) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for systemd (229-4ubuntu6) ...
+ftpsvr/
+ftpsvr/vsftpd
+ftpsvr/vsftpd_user_list
+ftpsvr/vsftpd.conf
+install vsftpd done!
+please run
+ssh slave sudo reboot; reboot
+to enable setting!
+enable rsync
+[1;32m upgrade slave done [0m
+--------------------------------------------------------------------------------
+
+
+[1;34m-->>  Master_Port : Check version[0m
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check hardware and software version info[0m
+
+--------------------------------------------------------------------------------
+Board Type:		GG3.2
+System Version:		"2.0.3",
+
+==========================
+|PORT   | ||  |||| ||||  |
+|NUMBER |     4567 0123  |
+==========================
+======================================================================================
+|  PORT  |  PRESENT  |      SERIAL NUMBER         |       FORMAT       |   VERSION   |
+======================================================================================
+|    0   |    YES    |              NULL          |        NULL        |     NULL    |
+|    1   |    YES    |              NULL          |        NULL        |     NULL    |
+|    2   |    YES    |              NULL          |        NULL        |     NULL    |
+|    3   |    YES    |              NULL          |        NULL        |     NULL    |
+|    4   |    YES    |              NULL          |        NULL        |     NULL    |
+|    5   |    YES    |              NULL          |        NULL        |     NULL    |
+|    6   |    YES    |              NULL          |        NULL        |     NULL    |
+|    7   |    YES    |              NULL          |        NULL        |     NULL    |
+======================================================================================
+--------------------------------------------------------------------------------
+
+
+[1;34m-->>  Master_Port : Check configuration parameter[0m
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check boot dmesg info[0m
+
+--------------------------------------------------------------------------------
+[    2.601517] 6408+gmsl: probe of 8-0020 failed with error 20979712
+[    2.804467] ina3221x: probe of 0-0042 failed with error -121
+[    2.805252] ina3221x: probe of 0-0043 failed with error -121
+[    2.806700] nvadsp 2993000.adsp: Registering AMC Error Interrupt
+[    2.872801] sdhci-tegra: probe of 3400000.sdhci failed with error -16
+[    5.512608] xhci-tegra 3530000.xhci: Direct firmware load for tegra18x_xusb_firmware failed with error -2
+[   10.464795] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.473377] pcieport 0000:00:03.0: PCIe Bus Error: severity=Corrected, type=Physical Layer, id=0018(Receiver ID)
+[   10.484873] pcieport 0000:00:03.0:   device [10de:10e6] error status/mask=00000001/00002000
+[   10.496156] pcieport 0000:00:03.0:    [ 0] Receiver Error         (First)
+[   10.503343] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.517155] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.530783] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.544595] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.558365] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.572062] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.585734] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.599394] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.613050] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.626714] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.640397] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.654098] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   10.667739] pcieport 0000:00:03.0: AER: Multiple Corrected error received: id=0060
+[   16.795261] pcieport 0000:00:03.0: AER: Multiple Uncorrected (Non-Fatal) error received: id=0060
+[   16.795378] pcieport 0000:00:03.0: PCIe Bus Error: severity=Uncorrected (Non-Fatal), type=Transaction Layer, id=0018(Requester ID)
+[   16.795390] pcieport 0000:00:03.0:   device [10de:10e6] error status/mask=00004000/00000000
+[   16.795414] pcieport 0000:00:03.0: broadcast error_detected message
+[   16.795726] pcieport 0000:00:03.0: AER: Uncorrected (Non-Fatal) error received: id=0060
+[   16.795751] pcieport 0000:00:03.0: PCIe Bus Error: severity=Uncorrected (Non-Fatal), type=Transaction Layer, id=0018(Requester ID)
+[   16.795759] pcieport 0000:00:03.0:   device [10de:10e6] error status/mask=00004000/00000000
+[   16.795781] pcieport 0000:00:03.0: broadcast error_detected message
+[    0.328851] i2c i2c-2: of_i2c: modalias failure on /i2c@3180000/gpio@2200000
+[    0.332891] regulator_get() failed for (6-0021,vcc), -19
+[    0.335930] regulator_get() failed for (8-0020,vcc), -19
+[    2.552714] gk20a 17000000.gp10b: failed to allocate secure buffer -12
+[    2.601517] 6408+gmsl: probe of 8-0020 failed with error 20979712
+[    2.788588] i2c i2c-0: Failed to register i2c client master at 0x20 (-16)
+[    2.804308] ina3221x 0-0042: ina3221 reset failure status: 0xffffff87
+[    2.804467] ina3221x: probe of 0-0042 failed with error -121
+[    2.805106] ina3221x 0-0043: ina3221 reset failure status: 0xffffff87
+[    2.805252] ina3221x: probe of 0-0043 failed with error -121
+[    2.872801] sdhci-tegra: probe of 3400000.sdhci failed with error -16
+[    5.512608] xhci-tegra 3530000.xhci: Direct firmware load for tegra18x_xusb_firmware failed with error -2
+[    8.640544] core_bw_settings_store: failed to reserve 8363500 KB/s
+[   16.795421] pcieport 0000:00:03.0: AER: Device recovery failed
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check network configuration info[0m
+
+--------------------------------------------------------------------------------
+eth0      Link encap:Ethernet  HWaddr 00:04:4b:a9:2f:76  
+          inet addr:192.168.100.99  Bcast:192.168.100.255  Mask:255.255.255.0
+          inet6 addr: fe80::204:4bff:fea9:2f76/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3083228 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1510015 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:2749703069 (2.7 GB)  TX bytes:700721140 (700.7 MB)
+          Interrupt:42 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:1148613 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1148613 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:68108274 (68.1 MB)  TX bytes:68108274 (68.1 MB)
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:10.208.252.247  P-t-P:10.64.64.64  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:135778 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:157100 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:15599710 (15.5 MB)  TX bytes:54515997 (54.5 MB)
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check rc.local service status[0m
+
+--------------------------------------------------------------------------------
+● rc-local.service - /etc/rc.local Compatibility
+   Loaded: loaded (/lib/systemd/system/rc-local.service; static; vendor preset: enabled)
+  Drop-In: /lib/systemd/system/rc-local.service.d
+           └─debian.conf
+   Active: active (running) since Fri 2019-11-29 10:04:20 CST; 6h ago
+   CGroup: /system.slice/rc-local.service
+           ├─1299 /bin/bash /usr/local/bin/rtkproc.sh
+           ├─1302 rtkproc.lnxarm -in ntrip://uisee:uisee@118.190.86.36:2015/RTCM32_GGB -out serial:///dev/ttyTHS3:115200 -wo
+           ├─1353 sudo wvdial
+           ├─1356 wvdial
+           └─1389 /usr/sbin/pppd 9600 modem crtscts defaultroute usehostname -detach user uninet noipdefault call wvdial usepeerdns idle 0 logfd 6
+
+Nov 29 16:43:00 master rc.local[777]: 2019/11/29 08:43:19 [.c         ]          0 B       0 bps (0) connecting... (1) /dev/ttyTHS3
+Nov 29 16:43:05 master rc.local[777]: 2019/11/29 08:43:24 [.c         ]          0 B       0 bps (0) connecting... (1) /dev/ttyTHS3
+Nov 29 16:43:10 master rc.local[777]: 2019/11/29 08:43:29 [.c         ]          0 B       0 bps (0) connecting... (1) /dev/ttyTHS3
+Nov 29 16:43:15 master rc.local[777]: 2019/11/29 08:43:34 [.c         ]          0 B       0 bps (0) connecting... (1) /dev/ttyTHS3
+Nov 29 16:43:20 master rc.local[777]: 2019/11/29 08:43:39 [.c         ]          0 B       0 bps (0) connecting... (1) /dev/ttyTHS3
+Nov 29 16:43:25 master rc.local[777]: 2019/11/29 08:43:44 [.c         ]          0 B       0 bps (0) connecting... (1) /dev/ttyTHS3
+Nov 29 16:43:30 master rc.local[777]: 2019/11/29 08:43:49 [.c         ]          0 B       0 bps (0) connecting... (1) /dev/ttyTHS3
+Nov 29 16:43:35 master rc.local[777]: 2019/11/29 08:43:54 [.c         ]          0 B       0 bps (0) connecting... (1) /dev/ttyTHS3
+Nov 29 16:43:40 master rc.local[777]: 2019/11/29 08:43:59 [.c         ]          0 B       0 bps (0) connecting... (1) /dev/ttyTHS3
+Nov 29 16:43:45 master rc.local[777]: 2019/11/29 08:44:04 [.c         ]          0 B       0 bps (0) connecting... (1) /dev/ttyTHS3
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check /home/worker memory space info[0m
+
+--------------------------------------------------------------------------------
+Filesystem       Size  Used Avail Use% Mounted on
+/dev/root        8.8G  5.7G  2.6G  69% /
+devtmpfs         6.7G     0  6.7G   0% /dev
+sysfs               0     0     0    - /sys
+proc                0     0     0    - /proc
+tmpfs            6.7G     0  6.7G   0% /dev/shm
+devpts              0     0     0    - /dev/pts
+tmpfs            6.7G   30M  6.7G   1% /run
+tmpfs            5.0M  4.0K  5.0M   1% /run/lock
+tmpfs            6.7G     0  6.7G   0% /sys/fs/cgroup
+cgroup              0     0     0    - /sys/fs/cgroup/systemd
+pstore              0     0     0    - /sys/fs/pstore
+cgroup              0     0     0    - /sys/fs/cgroup/debug
+cgroup              0     0     0    - /sys/fs/cgroup/cpuset
+cgroup              0     0     0    - /sys/fs/cgroup/cpu,cpuacct
+cgroup              0     0     0    - /sys/fs/cgroup/freezer
+debugfs             0     0     0    - /sys/kernel/debug
+configfs            0     0     0    - /sys/kernel/config
+/dev/mmcblk0p29   19G  7.7G   11G  43% /home
+tmpfs            685M  4.0K  685M   1% /run/user/999
+gvfsd-fuse          0     0     0    - /run/user/999/gvfs
+fusectl             0     0     0    - /sys/fs/fuse/connections
+/dev/mmcblk0p29   19G  7.7G   11G  43% /opt/turtle/UISEE_LOGS
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check os version info[0m
+
+--------------------------------------------------------------------------------
+{
+  "Name": "Uisee OS",
+  "Date": "2019-11-15",
+  "version": "2.0.3",
+  "MOD_hw_info": {
+    "apu": "1.8.37"
+  },
+  "ProductType": "GG"
+}
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check mount kernal driver info[0m
+
+--------------------------------------------------------------------------------
+Module                  Size  Used by
+iptable_mangle          2240  1
+xt_TEE                  3131  4
+nf_dup_ipv6             1862  1 xt_TEE
+nf_dup_ipv4             1862  1 xt_TEE
+ipt_MASQUERADE          2223  1
+nf_nat_masquerade_ipv4     3228  1 ipt_MASQUERADE
+iptable_nat             2582  1
+nf_nat_ipv4             6851  1 iptable_nat
+nf_nat                 18269  2 nf_nat_ipv4,nf_nat_masquerade_ipv4
+iptable_filter          2281  0
+ip_tables              19881  3 iptable_filter,iptable_mangle,iptable_nat
+fuse                   89268  3
+pci_tegra              75275  0
+bluedroid_pm           13564  0
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check videonode info[0m
+
+--------------------------------------------------------------------------------
+crw-rw----+ 1 root video 81, 4 Nov 29 10:04 /dev/video0
+crw-rw----+ 1 root video 81, 5 Nov 29 10:04 /dev/video1
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check camera in-position status[0m
+
+--------------------------------------------------------------------------------
+[1;33mConfigure frame_rate as 25 [0m
+video1 port 0 present
+video1 port 1 present
+video1 port 2 present
+video1 port 3 present
+video0 port 0 present
+video0 port 1 present
+video0 port 2 present
+video0 port 3 present
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check list /home/worker/firmware/APU/host file[0m
+
+--------------------------------------------------------------------------------
+total 408
+-rwxrwxrwx 1 root   root    42632 Nov 13 17:27 BootCommander
+-rwxrwxrwx 1 root   root     9330 Nov 13 17:27 apu_hwversion.py
+-rwxrwxrwx 1 root   root     9237 Nov 13 17:27 apu_info.py
+-rwxrwxrwx 1 root   root    10678 Nov 13 17:27 bootloader.py
+drwxrwxrwx 2 worker worker   4096 Nov 19 15:22 gg30-apu_host
+-rwxrwxrwx 1 root   root   160256 Nov 13 17:27 libopenblt.dll
+-rwxrwxrwx 1 root   root   160296 Nov 13 17:27 libopenblt.so
+-rwxrwxrwx 1 root   root     3168 Nov 13 17:27 updata_apu.sh
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check list /home/worker/firmware/APU/target file[0m
+
+--------------------------------------------------------------------------------
+total 1776
+-rwxrwxrwx 1 root root  70366 Nov 13 17:27 uos_gg3x_bootloader_v0.2.srec
+-rwxrwxrwx 1 root root 283006 Nov 13 17:27 uos_gg3x_e100.srec
+-rwxrwxrwx 1 root root 283006 Nov 13 17:27 uos_gg3x_e100_a.srec
+-rwxrwxrwx 1 root root 283006 Nov 13 17:27 uos_gg3x_e100_b.srec
+-rwxrwxrwx 1 root root 292174 Nov 13 17:27 uos_gg3x_e100w_v2.srec
+-rwxrwxrwx 1 root root 292174 Nov 13 17:27 uos_gg3x_e100w_v2_a.srec
+-rwxrwxrwx 1 root root 292174 Nov 13 17:27 uos_gg3x_e100w_v2_b.srec
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check cpu & temperature info[0m
+
+--------------------------------------------------------------------------------
+RAM 624/6847MB (lfb 644x4MB) CPU [0%@1895,0%@1959,0%@1958,0%@1911,0%@1912,0%@1915] EMC_FREQ 1%@1600 GR3D_FREQ 0%@1134 APE 158 MTS fg 0% bg 4% BCPU@39.5C MCPU@39.5C GPU@38.5C PLL@39.5C Tboard@36C Tdiode@37C PMIC@100C thermal@38.8C VDD_IN 3490/3490 VDD_CPU 296/296 VDD_GPU 99/99 VDD_SOC 792/792 VDD_WIFI 0/0 VDD_DDR 802/802
+RAM 624/6847MB (lfb 644x4MB) CPU [0%@1896,0%@1958,0%@1959,0%@1911,0%@1912,0%@1914] EMC_FREQ 1%@1600 GR3D_FREQ 0%@1134 APE 158 MTS fg 0% bg 0% BCPU@39C MCPU@39C GPU@38.5C PLL@39C Tboard@36C Tdiode@37C PMIC@100C thermal@39.1C VDD_IN 3465/3477 VDD_CPU 297/296 VDD_GPU 99/99 VDD_SOC 792/792 VDD_WIFI 0/0 VDD_DDR 783/792
+RAM 624/6847MB (lfb 644x4MB) CPU [1%@1898,0%@1959,0%@1958,2%@1912,0%@1914,0%@1915] EMC_FREQ 1%@1600 GR3D_FREQ 0%@1134 APE 158 MTS fg 0% bg 0% BCPU@39.5C MCPU@39.5C GPU@38.5C PLL@39.5C Tboard@36C Tdiode@36.75C PMIC@100C thermal@38.8C VDD_IN 3465/3473 VDD_CPU 296/296 VDD_GPU 99/99 VDD_SOC 792/792 VDD_WIFI 0/0 VDD_DDR 783/789
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check cpu & gpu frequency info[0m
+
+--------------------------------------------------------------------------------
+SOC family:tegra186  Machine:storm
+Online CPUs: 0-5
+CPU Cluster Switching: Disabled
+cpu0: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+cpu1: Gonvernor=performance MinFreq=1958400 MaxFreq=1958400 CurrentFreq=1958400
+cpu2: Gonvernor=performance MinFreq=1958400 MaxFreq=1958400 CurrentFreq=1958400
+cpu3: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+cpu4: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+cpu5: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+GPU MinFreq=1134750000 MaxFreq=1134750000 CurrentFreq=1134750000
+EMC MinFreq=204000000 MaxFreq=1600000000 CurrentFreq=1600000000 FreqOverride=1
+Fan: speed=255
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check module power status[0m
+
+--------------------------------------------------------------------------------
+diagnose status of all modules
+	U13 input-stat(0x00): 0xE3
+[32m	4g module is enabled[0m
+	U13 input-stat(0x00): 0xE3
+[31m	wifi module is disable[0m
+	U62 input-stat(0x00): 0xF7
+[32m	dgps module is enabled[0m
+	U52 input-stat(0x00): 0xFF
+[32m	lidar module is enabled[0m
+	U35 input-stat(0x00): 0xFF
+[32m	camera-964 module is enabled[0m
+	U58 input-stat(0x00): 0x
+[31m	gmsl module is disable[0m
+	U45 input-stat(0x00): 0x1
+[32m	1g_switch module is enabled[0m
+	U45 input-stat(0x00): 0x1
+[32m	lidar_switch module is enabled[0m
+--------------------------------------------------------------------------------
+
+
+[1;34m-->>  Slave_Port : Check configuration parameter[0m
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check boot dmesg info[0m
+
+--------------------------------------------------------------------------------
+[    2.573793] 6408+gmsl: probe of 6-0021 failed with error -121
+[    3.031928] 6408+gmsl: probe of 8-0020 failed with error 20979712
+[    5.363661] ina3221x: probe of 0-0042 failed with error -121
+[    5.364603] ina3221x: probe of 0-0043 failed with error -121
+[    5.367063] nvadsp 2993000.adsp: Registering AMC Error Interrupt
+[    5.672442] xhci-tegra 3530000.xhci: Direct firmware load for tegra18x_xusb_firmware failed with error -2
+[    7.124153] sdhci-tegra: probe of 3400000.sdhci failed with error -16
+[    0.320754] i2c i2c-2: of_i2c: modalias failure on /i2c@3180000/gpio@2200000
+[    0.325122] regulator_get() failed for (6-0021,vcc), -19
+[    0.328130] regulator_get() failed for (8-0020,vcc), -19
+[    2.543759] gk20a 17000000.gp10b: failed to allocate secure buffer -12
+[    2.573793] 6408+gmsl: probe of 6-0021 failed with error -121
+[    3.031928] 6408+gmsl: probe of 8-0020 failed with error 20979712
+[    5.133045] i2c i2c-0: Failed to register i2c client master at 0x20 (-16)
+[    5.363413] ina3221x 0-0042: ina3221 reset failure status: 0xffffff87
+[    5.363661] ina3221x: probe of 0-0042 failed with error -121
+[    5.364382] ina3221x 0-0043: ina3221 reset failure status: 0xffffff87
+[    5.364603] ina3221x: probe of 0-0043 failed with error -121
+[    5.672442] xhci-tegra 3530000.xhci: Direct firmware load for tegra18x_xusb_firmware failed with error -2
+[    7.124153] sdhci-tegra: probe of 3400000.sdhci failed with error -16
+[    8.671985] core_bw_settings_store: failed to reserve 8363500 KB/s
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check network configuration info[0m
+
+--------------------------------------------------------------------------------
+eth0      Link encap:Ethernet  HWaddr 00:04:4b:a9:2d:b8  
+          inet addr:192.168.100.98  Bcast:192.168.100.255  Mask:255.255.255.0
+          inet6 addr: fe80::204:4bff:fea9:2db8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:115026 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:15938 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:158905708 (158.9 MB)  TX bytes:19994489 (19.9 MB)
+          Interrupt:42 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:4948 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:4948 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:394158 (394.1 KB)  TX bytes:394158 (394.1 KB)
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check rc.local service status[0m
+
+--------------------------------------------------------------------------------
+● rc-local.service - /etc/rc.local Compatibility
+   Loaded: loaded (/lib/systemd/system/rc-local.service; static; vendor preset: enabled)
+  Drop-In: /lib/systemd/system/rc-local.service.d
+           └─debian.conf
+   Active: active (exited) since Fri 2019-11-29 10:04:25 CST; 6h ago
+  Process: 1022 ExecStart=/etc/rc.local start (code=exited, status=0/SUCCESS)
+
+Nov 29 10:04:25 slave systemd[1]: Starting /etc/rc.local Compatibility...
+Nov 29 10:04:25 slave rc.local[1022]: error sata disk /dev/sda doesn't exist! 
+Nov 29 10:04:25 slave rc.local[1022]: error /dev/nvme0n1 doesn't exist! 
+Nov 29 10:04:25 slave rc.local[1022]: No need to patch deb packet
+Nov 29 10:04:25 slave systemd[1]: Started /etc/rc.local Compatibility.
+Nov 29 10:04:25 slave rc.local[1022]: 506 Cannot talk to daemon
+Nov 29 10:04:28 slave rc.local[1022]: 200 OK
+Nov 29 10:04:28 slave rc.local[1022]: 200 OK
+Nov 29 10:04:32 slave rc.local[1022]: 200 OK
+Nov 29 10:04:32 slave rc.local[1022]: 200 OK
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check /home/worker memory space info[0m
+
+--------------------------------------------------------------------------------
+Filesystem       Size  Used Avail Use% Mounted on
+/dev/root        8.8G  5.1G  3.3G  61% /
+devtmpfs         6.7G     0  6.7G   0% /dev
+sysfs               0     0     0    - /sys
+proc                0     0     0    - /proc
+tmpfs            6.7G     0  6.7G   0% /dev/shm
+devpts              0     0     0    - /dev/pts
+tmpfs            6.7G   22M  6.7G   1% /run
+tmpfs            5.0M     0  5.0M   0% /run/lock
+tmpfs            6.7G     0  6.7G   0% /sys/fs/cgroup
+cgroup              0     0     0    - /sys/fs/cgroup/systemd
+pstore              0     0     0    - /sys/fs/pstore
+cgroup              0     0     0    - /sys/fs/cgroup/cpuset
+cgroup              0     0     0    - /sys/fs/cgroup/cpu,cpuacct
+cgroup              0     0     0    - /sys/fs/cgroup/freezer
+cgroup              0     0     0    - /sys/fs/cgroup/debug
+debugfs             0     0     0    - /sys/kernel/debug
+configfs            0     0     0    - /sys/kernel/config
+/dev/mmcblk0p29   19G  3.2G   15G  18% /home
+tmpfs            685M  4.0K  685M   1% /run/user/999
+gvfsd-fuse          0     0     0    - /run/user/999/gvfs
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check os version info[0m
+
+--------------------------------------------------------------------------------
+{
+  "Name": "Uisee OS",
+  "Date": "2019-11-15",
+  "version": "2.0.3",
+  "MOD_hw_info": {
+    "apu": "1.8.37"
+  },
+  "ProductType": "GG"
+}
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check mount kernal driver info[0m
+
+--------------------------------------------------------------------------------
+Module                  Size  Used by
+fuse                   89268  2
+pci_tegra              75275  0
+bluedroid_pm           13564  0
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check videonode info[0m
+
+--------------------------------------------------------------------------------
+crw-rw----+ 1 root video 81, 4 Nov 29 10:04 /dev/video0
+crw-rw----+ 1 root video 81, 5 Nov 29 10:04 /dev/video1
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check camera in-position status[0m
+
+--------------------------------------------------------------------------------
+[1;33mConfigure frame_rate as 25 [0m
+video1 port 0 present
+video1 port 1 present
+video1 port 2 present
+video1 port 3 present
+video0 port 0 present
+video0 port 1 present
+video0 port 2 present
+video0 port 3 present
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check ic2 bus of video status info[0m
+
+--------------------------------------------------------------------------------
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- 24 25 26 27 28 29 2a 2b -- -- -- -- 
+30: 30 -- -- -- -- -- -- -- -- -- -- -- -- 3d -- -- 
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- 58 59 5a 5b UU 5d UU 5f 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: -- -- -- -- -- -- -- --                         
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check upgrade weisen camera file[0m
+
+--------------------------------------------------------------------------------
+total 36
+-rw-r--r-- 1 worker worker 33065 Apr 15  2019 OV10640_OV490_combine_general_v1064_20180903_common2019032109_withSPIHeader.bin
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check cpu & temperature info[0m
+
+--------------------------------------------------------------------------------
+RAM 336/6847MB (lfb 1529x4MB) CPU [0%@1918,0%@1957,0%@1957,0%@1918,0%@1919,0%@1920] EMC_FREQ 1%@1600 GR3D_FREQ 0%@1134 APE 158 MTS fg 0% bg 1% BCPU@40.5C MCPU@40.5C GPU@38C PLL@40.5C Tboard@37C Tdiode@38.25C PMIC@100C thermal@39.5C VDD_IN 3184/3184 VDD_CPU 298/298 VDD_GPU 99/99 VDD_SOC 696/696 VDD_WIFI 0/0 VDD_DDR 787/787
+RAM 336/6847MB (lfb 1529x4MB) CPU [0%@1920,0%@1958,0%@1958,0%@1918,0%@1920,0%@1920] EMC_FREQ 1%@1600 GR3D_FREQ 0%@1134 APE 158 MTS fg 0% bg 0% BCPU@40.5C MCPU@40.5C GPU@38C PLL@40.5C Tboard@37C Tdiode@38C PMIC@100C thermal@39.5C VDD_IN 3134/3159 VDD_CPU 248/273 VDD_GPU 99/99 VDD_SOC 696/696 VDD_WIFI 0/0 VDD_DDR 768/777
+RAM 336/6847MB (lfb 1529x4MB) CPU [0%@1844,0%@1938,0%@1938,0%@1844,0%@1842,0%@1845] EMC_FREQ 1%@1600 GR3D_FREQ 0%@1134 APE 158 MTS fg 0% bg 0% BCPU@40C MCPU@40C GPU@38C PLL@40C Tboard@37C Tdiode@38.25C PMIC@100C thermal@39.2C VDD_IN 3110/3142 VDD_CPU 248/264 VDD_GPU 99/99 VDD_SOC 696/696 VDD_WIFI 0/0 VDD_DDR 768/774
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check cpu & gpu frequency info[0m
+
+--------------------------------------------------------------------------------
+SOC family:tegra186  Machine:storm
+Online CPUs: 0-5
+CPU Cluster Switching: Disabled
+cpu0: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+cpu1: Gonvernor=performance MinFreq=1958400 MaxFreq=1958400 CurrentFreq=1958400
+cpu2: Gonvernor=performance MinFreq=1958400 MaxFreq=1958400 CurrentFreq=1958400
+cpu3: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+cpu4: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+cpu5: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+GPU MinFreq=1134750000 MaxFreq=1134750000 CurrentFreq=1134750000
+EMC MinFreq=204000000 MaxFreq=1600000000 CurrentFreq=1600000000 FreqOverride=1
+Fan: speed=255
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check view display status info[0m
+
+--------------------------------------------------------------------------------
+/dev/i2c-6 0x48 0x0003 0x00
+began to read:
+error during I2C_RDWR ioctl with error code -1
+read value: 00
+--------------------------------------------------------------------------------
+
+
+[1;34m-->>  Master_Port : Check interconnect[0m
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check master access slave through domain name[0m
+
+--------------------------------------------------------------------------------
+ssh slave and output slave port ip
+eth0      Link encap:Ethernet  HWaddr 00:04:4b:a9:2d:b8  
+          inet addr:192.168.100.98  Bcast:192.168.100.255  Mask:255.255.255.0
+          inet6 addr: fe80::204:4bff:fea9:2db8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:115365 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:16337 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:158970990 (158.9 MB)  TX bytes:20069699 (20.0 MB)
+          Interrupt:42 
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check master access slave through ip[0m
+
+--------------------------------------------------------------------------------
+ssh 192.168.100.98 and output slave port ip
+eth0      Link encap:Ethernet  HWaddr 00:04:4b:a9:2d:b8  
+          inet addr:192.168.100.98  Bcast:192.168.100.255  Mask:255.255.255.0
+          inet6 addr: fe80::204:4bff:fea9:2db8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:115385 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:16359 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:158975865 (158.9 MB)  TX bytes:20074790 (20.0 MB)
+          Interrupt:42 
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check master and slave interconnect mode 1[0m
+
+--------------------------------------------------------------------------------
+PING slave (192.168.100.98) 56(84) bytes of data.
+64 bytes from slave (192.168.100.98): icmp_seq=1 ttl=64 time=0.324 ms
+64 bytes from slave (192.168.100.98): icmp_seq=2 ttl=64 time=0.266 ms
+64 bytes from slave (192.168.100.98): icmp_seq=3 ttl=64 time=0.200 ms
+64 bytes from slave (192.168.100.98): icmp_seq=4 ttl=64 time=0.257 ms
+64 bytes from slave (192.168.100.98): icmp_seq=5 ttl=64 time=0.252 ms
+64 bytes from slave (192.168.100.98): icmp_seq=6 ttl=64 time=0.251 ms
+64 bytes from slave (192.168.100.98): icmp_seq=7 ttl=64 time=0.194 ms
+64 bytes from slave (192.168.100.98): icmp_seq=8 ttl=64 time=0.193 ms
+64 bytes from slave (192.168.100.98): icmp_seq=9 ttl=64 time=0.253 ms
+64 bytes from slave (192.168.100.98): icmp_seq=10 ttl=64 time=0.246 ms
+
+--- slave ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8997ms
+rtt min/avg/max/mdev = 0.193/0.243/0.324/0.041 ms
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check master and slave interconnect mode 2[0m
+
+--------------------------------------------------------------------------------
+PING 192.168.100.98 (192.168.100.98) 56(84) bytes of data.
+64 bytes from 192.168.100.98: icmp_seq=1 ttl=64 time=0.284 ms
+64 bytes from 192.168.100.98: icmp_seq=2 ttl=64 time=0.245 ms
+64 bytes from 192.168.100.98: icmp_seq=3 ttl=64 time=0.247 ms
+64 bytes from 192.168.100.98: icmp_seq=4 ttl=64 time=0.258 ms
+64 bytes from 192.168.100.98: icmp_seq=5 ttl=64 time=0.257 ms
+64 bytes from 192.168.100.98: icmp_seq=6 ttl=64 time=0.252 ms
+64 bytes from 192.168.100.98: icmp_seq=7 ttl=64 time=0.257 ms
+64 bytes from 192.168.100.98: icmp_seq=8 ttl=64 time=0.253 ms
+64 bytes from 192.168.100.98: icmp_seq=9 ttl=64 time=0.195 ms
+64 bytes from 192.168.100.98: icmp_seq=10 ttl=64 time=0.259 ms
+
+--- 192.168.100.98 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8997ms
+rtt min/avg/max/mdev = 0.195/0.250/0.284/0.028 ms
+--------------------------------------------------------------------------------
+
+
+[1;34m-->>  Slave_Port : Check interconnection[0m
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check slave access master through domain name[0m
+
+--------------------------------------------------------------------------------
+Current port is slave port
+eth0      Link encap:Ethernet  HWaddr 00:04:4b:a9:2d:b8  
+          inet addr:192.168.100.98  Bcast:192.168.100.255  Mask:255.255.255.0
+          inet6 addr: fe80::204:4bff:fea9:2db8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:115426 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:16400 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:158982870 (158.9 MB)  TX bytes:20081843 (20.0 MB)
+          Interrupt:42 
+
+After access is master port
+eth0      Link encap:Ethernet  HWaddr 00:04:4b:a9:2f:76  
+          inet addr:192.168.100.99  Bcast:192.168.100.255  Mask:255.255.255.0
+          inet6 addr: fe80::204:4bff:fea9:2f76/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3088124 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1514754 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:2750124041 (2.7 GB)  TX bytes:702317470 (702.3 MB)
+          Interrupt:42 
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check slave access master through ip[0m
+
+--------------------------------------------------------------------------------
+Current port is slave port
+eth0      Link encap:Ethernet  HWaddr 00:04:4b:a9:2d:b8  
+          inet addr:192.168.100.98  Bcast:192.168.100.255  Mask:255.255.255.0
+          inet6 addr: fe80::204:4bff:fea9:2db8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:115470 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:16445 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:158993080 (158.9 MB)  TX bytes:20092707 (20.0 MB)
+          Interrupt:42 
+
+After access is master port
+eth0      Link encap:Ethernet  HWaddr 00:04:4b:a9:2f:76  
+          inet addr:192.168.100.99  Bcast:192.168.100.255  Mask:255.255.255.0
+          inet6 addr: fe80::204:4bff:fea9:2f76/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3088277 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1514900 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:2750142285 (2.7 GB)  TX bytes:702474801 (702.4 MB)
+          Interrupt:42 
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check slave and master interconnect mode 1[0m
+
+--------------------------------------------------------------------------------
+Current port is slave port
+eth0      Link encap:Ethernet  HWaddr 00:04:4b:a9:2d:b8  
+          inet addr:192.168.100.98  Bcast:192.168.100.255  Mask:255.255.255.0
+          inet6 addr: fe80::204:4bff:fea9:2db8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:115513 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:16492 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:159003168 (159.0 MB)  TX bytes:20103703 (20.1 MB)
+          Interrupt:42 
+
+PING master (192.168.100.99) 56(84) bytes of data.
+64 bytes from master (192.168.100.99): icmp_seq=1 ttl=64 time=0.271 ms
+64 bytes from master (192.168.100.99): icmp_seq=2 ttl=64 time=0.266 ms
+64 bytes from master (192.168.100.99): icmp_seq=3 ttl=64 time=0.257 ms
+64 bytes from master (192.168.100.99): icmp_seq=4 ttl=64 time=0.161 ms
+64 bytes from master (192.168.100.99): icmp_seq=5 ttl=64 time=0.237 ms
+64 bytes from master (192.168.100.99): icmp_seq=6 ttl=64 time=0.282 ms
+64 bytes from master (192.168.100.99): icmp_seq=7 ttl=64 time=0.180 ms
+64 bytes from master (192.168.100.99): icmp_seq=8 ttl=64 time=0.272 ms
+64 bytes from master (192.168.100.99): icmp_seq=9 ttl=64 time=0.207 ms
+64 bytes from master (192.168.100.99): icmp_seq=10 ttl=64 time=0.264 ms
+
+--- master ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8998ms
+rtt min/avg/max/mdev = 0.161/0.239/0.282/0.044 ms
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check slave and master interconnect mode 2[0m
+
+--------------------------------------------------------------------------------
+Current port is slave port
+eth0      Link encap:Ethernet  HWaddr 00:04:4b:a9:2d:b8  
+          inet addr:192.168.100.98  Bcast:192.168.100.255  Mask:255.255.255.0
+          inet6 addr: fe80::204:4bff:fea9:2db8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:115559 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:16538 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:159010239 (159.0 MB)  TX bytes:20112170 (20.1 MB)
+          Interrupt:42 
+
+PING 192.168.100.99 (192.168.100.99) 56(84) bytes of data.
+64 bytes from 192.168.100.99: icmp_seq=1 ttl=64 time=0.274 ms
+64 bytes from 192.168.100.99: icmp_seq=2 ttl=64 time=0.280 ms
+64 bytes from 192.168.100.99: icmp_seq=3 ttl=64 time=0.274 ms
+64 bytes from 192.168.100.99: icmp_seq=4 ttl=64 time=0.267 ms
+64 bytes from 192.168.100.99: icmp_seq=5 ttl=64 time=0.260 ms
+64 bytes from 192.168.100.99: icmp_seq=6 ttl=64 time=0.257 ms
+64 bytes from 192.168.100.99: icmp_seq=7 ttl=64 time=0.258 ms
+64 bytes from 192.168.100.99: icmp_seq=8 ttl=64 time=0.263 ms
+64 bytes from 192.168.100.99: icmp_seq=9 ttl=64 time=0.259 ms
+64 bytes from 192.168.100.99: icmp_seq=10 ttl=64 time=0.250 ms
+
+--- 192.168.100.99 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 8998ms
+rtt min/avg/max/mdev = 0.250/0.264/0.280/0.013 ms
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check slave access network: 8.8.8.8[0m
+
+--------------------------------------------------------------------------------
+Current port is slave port
+eth0      Link encap:Ethernet  HWaddr 00:04:4b:a9:2d:b8  
+          inet addr:192.168.100.98  Bcast:192.168.100.255  Mask:255.255.255.0
+          inet6 addr: fe80::204:4bff:fea9:2db8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:115601 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:16582 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:159016974 (159.0 MB)  TX bytes:20120345 (20.1 MB)
+          Interrupt:42 
+
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=245 time=71.0 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=245 time=79.9 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=245 time=78.9 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=245 time=78.0 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=245 time=76.0 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=245 time=76.1 ms
+64 bytes from 8.8.8.8: icmp_seq=7 ttl=245 time=74.9 ms
+64 bytes from 8.8.8.8: icmp_seq=8 ttl=245 time=73.9 ms
+64 bytes from 8.8.8.8: icmp_seq=9 ttl=245 time=72.0 ms
+64 bytes from 8.8.8.8: icmp_seq=10 ttl=245 time=72.1 ms
+
+--- 8.8.8.8 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9008ms
+rtt min/avg/max/mdev = 71.003/75.323/79.956/2.925 ms
+PING www.a.shifen.com (112.80.248.76) 56(84) bytes of data.
+64 bytes from 112.80.248.76: icmp_seq=1 ttl=54 time=72.9 ms
+64 bytes from 112.80.248.76: icmp_seq=2 ttl=54 time=67.3 ms
+64 bytes from 112.80.248.76: icmp_seq=3 ttl=54 time=68.6 ms
+64 bytes from 112.80.248.76: icmp_seq=4 ttl=54 time=68.9 ms
+64 bytes from 112.80.248.76: icmp_seq=5 ttl=54 time=68.0 ms
+64 bytes from 112.80.248.76: icmp_seq=6 ttl=54 time=75.1 ms
+64 bytes from 112.80.248.76: icmp_seq=7 ttl=54 time=74.8 ms
+64 bytes from 112.80.248.76: icmp_seq=8 ttl=54 time=72.2 ms
+64 bytes from 112.80.248.76: icmp_seq=9 ttl=54 time=81.2 ms
+64 bytes from 112.80.248.76: icmp_seq=10 ttl=54 time=79.9 ms
+
+--- www.a.shifen.com ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 13160ms
+rtt min/avg/max/mdev = 67.341/72.930/81.212/4.657 ms
+--------------------------------------------------------------------------------
+
+
+[1;34m-->>  Master_Port : Check uos system[0m
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check launch uos system info[0m
+
+--------------------------------------------------------------------------------
+
+Per-launch_uos Log creation and auto-recycle 
+top_dir: /home
+    Delete symbol link log
+
+Json Checker:
+
+Start to parse all .json files under(recursive):"./"
+
+checking: ./uos_common.json
+
+Invalid key detected:
+break_by_pressure
+rtkproc_ntrip_error_output
+gpsdiskpatch_port
+avp_display
+vogm_ignore_border
+cams_per_mipi_csi
+rccc_image_plane
+
+Json Checker Done[ 1 ]
+
+Json Checker:
+
+Start to parse all .json files under(recursive):"./etc"
+
+checking: ./etc/ula_uploader.json
+All .json files are parsed successful
+
+Json Checker Done[ 0 ]
+
+
+
+Hardware Checker:
+vehicle_name: e100.car31
+run_scene: real
+platform: SMP
+roadmap_fname: data/yutong_xinnengyuan.rmap
+OS: aarch64 GNU/Linux
+
+  master NIC 1000Mb/s.........................................[[92mOK[0m]
+  CAN0........................................................[[91mFAIL[0m]
+  CAN1........................................................[[91mFAIL[0m]
+  Gateway.....................................................[[91mFAIL[0m]
+  Internet....................................................[[92mOK[0m]
+  Lidar.......................................................[[91mFAIL[0m]
+  GPS connected...............................................[[91mFAIL[0m]
+  Camera FPGA.................................................[[91mFAIL[0m]
+  /dev/video0 open............................................[[92mOK[0m]
+  /dev/video1 open............................................[[92mOK[0m]
+  /dev/video0 connected.......................................[[92mOK[0m]
+
+Check CPU on master
+CPU online check...
+SOC family:tegra186  Machine:storm
+Online CPUs: 0-5
+CPU Cluster Switching: Disabled
+cpu0: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+cpu1: Gonvernor=performance MinFreq=1958400 MaxFreq=1958400 CurrentFreq=1958400
+cpu2: Gonvernor=performance MinFreq=1958400 MaxFreq=1958400 CurrentFreq=1958400
+cpu3: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+cpu4: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+cpu5: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+GPU MinFreq=1134750000 MaxFreq=1134750000 CurrentFreq=1134750000
+EMC MinFreq=204000000 MaxFreq=1600000000 CurrentFreq=1600000000 FreqOverride=1
+Fan: speed=255
+All CPU onlined.
+Check CPU on slave
+CPU online check...
+SOC family:tegra186  Machine:storm
+Online CPUs: 0-5
+CPU Cluster Switching: Disabled
+cpu0: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+cpu1: Gonvernor=performance MinFreq=1958400 MaxFreq=1958400 CurrentFreq=1958400
+cpu2: Gonvernor=performance MinFreq=1958400 MaxFreq=1958400 CurrentFreq=1958400
+cpu3: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+cpu4: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+cpu5: Gonvernor=performance MinFreq=1920000 MaxFreq=1920000 CurrentFreq=1920000
+GPU MinFreq=1134750000 MaxFreq=1134750000 CurrentFreq=1134750000
+EMC MinFreq=204000000 MaxFreq=1600000000 CurrentFreq=1600000000 FreqOverride=1
+Fan: speed=255
+All CPU onlined.
+Master Disk usage:
+Filesystem      1M-blocks  Used Available Use% Mounted on
+/dev/root           8944M 5816M     2652M  69% /
+/dev/mmcblk0p29    19419M 7864M    10547M  43% /home
+
+Slave Disk usage:
+Filesystem      1M-blocks  Used Available Use% Mounted on
+/dev/root           8944M 5126M     3342M  61% /
+/dev/mmcblk0p29    19419M 3235M    15176M  18% /home
+
+Board Type:		GG3.2
+System Version:		"2.0.3",
+
+==========================
+|PORT   | ||  |||| ||||  |
+|NUMBER |     4567 0123  |
+==========================
+======================================================================================
+|  PORT  |  PRESENT  |      SERIAL NUMBER         |       FORMAT       |   VERSION   |
+======================================================================================
+|    0   |    YES    |              NULL          |        NULL        |     NULL    |
+|    1   |    YES    |              NULL          |        NULL        |     NULL    |
+|    2   |    YES    |              NULL          |        NULL        |     NULL    |
+|    3   |    YES    |              NULL          |        NULL        |     NULL    |
+|    4   |    YES    |              NULL          |        NULL        |     NULL    |
+|    5   |    YES    |              NULL          |        NULL        |     NULL    |
+|    6   |    YES    |              NULL          |        NULL        |     NULL    |
+|    7   |    YES    |              NULL          |        NULL        |     NULL    |
+======================================================================================
+kill uos_daemon
+kill uos_display
+kill uos_cv_perception-server
+kill uos_rcs_server
+done!
+/home/worker/uisee_1118/run
+start to collect performance count...
+uid=0(root) gid=0(root) groups=0(root)
+kill uos_daemon
+kill uos_display
+kill uos_rcs_server
+done!
+stop performance collecting
+Log saved to /home/worker/UISEE_LOGS
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check /opt path compass file property info[0m
+
+--------------------------------------------------------------------------------
+total 32
+drwxr-xr-x 2 root   root   4096 Nov 18 16:53 certs
+drwxr-xr-x 9 worker worker 4096 Nov 20 18:25 compass
+drwxrwxr-x 2 turtle turtle 4096 Nov 18 16:02 qcacld
+drwxr-xr-x 2 root   root   4096 Nov 13  2018 tls
+dr-xr-xr-x 3 turtle turtle 4096 Jan 23  2019 turtle
+drwxr-xr-x 2 root   root   4096 Nov 18 16:42 uisee_gps_dispatch
+drwxr-xr-x 2 worker worker 4096 Nov 29 16:46 uisee_io_dispatch
+drwxr-xr-x 2 root   root   4096 Nov 18 16:42 uisee_log_daemon
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check uisee_io_dispatch service status[0m
+
+--------------------------------------------------------------------------------
+● uisee_io_dispatch.service - uisee_io_dispatch
+   Loaded: loaded (/etc/systemd/system/uisee_io_dispatch.service; enabled; vendor preset: enabled)
+   Active: active (running) since Fri 2019-11-29 16:45:54 CST; 45s ago
+ Main PID: 22483 (start_io_dispat)
+   CGroup: /system.slice/uisee_io_dispatch.service
+           ├─22483 /bin/bash /opt/uisee_io_dispatch/start_io_dispatch
+           └─22489 ./bin/uisee_io_dispatch-main
+
+Nov 29 16:46:34 master start_io_dispatch[22483]: [16:46:34.052:ERROR] <uos_io_dispatch.c:491> Failed to push msg to uos_chassis's r_io_dispatch_queue!
+Nov 29 16:46:34 master start_io_dispatch[22483]: [16:46:34.712:ERROR] <uos_io_dispatch.c:491> Failed to push msg to uos_chassis's r_io_dispatch_queue!
+Nov 29 16:46:35 master start_io_dispatch[22483]: [16:46:35.372:ERROR] <uos_io_dispatch.c:491> Failed to push msg to uos_chassis's r_io_dispatch_queue!
+Nov 29 16:46:36 master start_io_dispatch[22483]: [16:46:36.053:ERROR] <uos_io_dispatch.c:491> Failed to push msg to uos_chassis's r_io_dispatch_queue!
+Nov 29 16:46:36 master start_io_dispatch[22483]: [16:46:36.713:ERROR] <uos_io_dispatch.c:491> Failed to push msg to uos_chassis's r_io_dispatch_queue!
+Nov 29 16:46:37 master start_io_dispatch[22483]: [16:46:37.373:ERROR] <uos_io_dispatch.c:491> Failed to push msg to uos_chassis's r_io_dispatch_queue!
+Nov 29 16:46:38 master start_io_dispatch[22483]: [16:46:38.054:ERROR] <uos_io_dispatch.c:491> Failed to push msg to uos_chassis's r_io_dispatch_queue!
+Nov 29 16:46:38 master start_io_dispatch[22483]: [16:46:38.714:ERROR] <uos_io_dispatch.c:491> Failed to push msg to uos_chassis's r_io_dispatch_queue!
+Nov 29 16:46:39 master start_io_dispatch[22483]: [16:46:39.374:ERROR] <uos_io_dispatch.c:491> Failed to push msg to uos_chassis's r_io_dispatch_queue!
+Nov 29 16:46:40 master start_io_dispatch[22483]: [16:46:40.055:ERROR] <uos_io_dispatch.c:491> Failed to push msg to uos_chassis's r_io_dispatch_queue!
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check uisee_gps_dispatch service status[0m
+
+--------------------------------------------------------------------------------
+● uisee_gps_dispatch.service - uisee_gps_dispatch
+   Loaded: loaded (/etc/systemd/system/uisee_gps_dispatch.service; enabled; vendor preset: enabled)
+   Active: active (running) since Fri 2019-11-29 16:45:55 CST; 45s ago
+  Process: 22551 ExecStop=/opt/uisee_gps_dispatch/stop_gps_dispatch (code=exited, status=0/SUCCESS)
+ Main PID: 22557 (start_gps_dispa)
+   CGroup: /system.slice/uisee_gps_dispatch.service
+           ├─22557 /bin/bash /opt/uisee_gps_dispatch/start_gps_dispatch
+           ├─22564 ./bin/uisee_gps_dispatch-main
+           ├─22565 /bin/bash ./bin/start_rtkproc
+           └─23712 ./bin/rtkproc -in ntrip://uisee:uisee@118.190.86.36:29218/RTCM32_GGB -out tcpsvr://127.0.0.1:2000 -out ./data/rtklog-20191129/rtkproc.1129-164555.ntrip.bin -t 3 -fl ./data/rtklog-20191129/rtkproc.1129-164555.trace.txt
+
+Nov 29 16:45:55 master systemd[1]: Started uisee_gps_dispatch.
+Nov 29 16:45:59 master start_gps_dispatch[22557]: Starting "./bin/rtkproc -in ntrip://uisee:uisee@118.190.86.36:29218/RTCM32_GGB -out tcpsvr://127.0.0.1:2000 -out ./data/rtklog-20191129/rtkproc.1129-164555.ntrip.bin -t 3 -fl ./data/rtklog-20191129/rtkproc.1129-164555.trace.txt >> ./data/rtklog-20191129/rtkproc.1129-164555.stdout.txt 2>&1"
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check uisee_log_daemon service status[0m
+
+--------------------------------------------------------------------------------
+● uisee_log_daemon.service - uisee_log_daemon
+   Loaded: loaded (/etc/systemd/system/uisee_log_daemon.service; enabled; vendor preset: enabled)
+   Active: active (running) since Fri 2019-11-29 16:45:53 CST; 46s ago
+ Main PID: 22410 (start_log_daemo)
+   CGroup: /system.slice/uisee_log_daemon.service
+           ├─22410 /bin/bash /opt/uisee_log_daemon/start_log_daemon
+           └─22412 ./bin/uisee_log_daemon-main
+
+Nov 29 16:45:53 master systemd[1]: Started uisee_log_daemon.
+Nov 29 16:45:54 master start_log_daemon[22410]: Log msg-queue not exist, switch to legacy mode.
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check enable ftp switch info[0m
+
+--------------------------------------------------------------------------------
+enable ftp server
+prepare install vsftpd....
+(Reading database ... 135370 files and directories currently installed.)
+Preparing to unpack .../ssl-cert_1.0.37_all.deb ...
+Unpacking ssl-cert (1.0.37) over (1.0.37) ...
+Setting up ssl-cert (1.0.37) ...
+Processing triggers for man-db (2.7.5-1) ...
+(Reading database ... 135370 files and directories currently installed.)
+Preparing to unpack .../vsftpd_3.0.3-3ubuntu2_arm64.deb ...
+Unpacking vsftpd (3.0.3-3ubuntu2) over (3.0.3-3ubuntu2) ...
+Setting up vsftpd (3.0.3-3ubuntu2) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for systemd (229-4ubuntu6) ...
+ftpsvr/
+ftpsvr/vsftpd
+ftpsvr/vsftpd_user_list
+ftpsvr/vsftpd.conf
+install vsftpd done!
+please run
+ssh slave sudo reboot; reboot
+to enable setting!
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check UISEE_LOGS file mount info[0m
+
+--------------------------------------------------------------------------------
+/dev/mmcblk0p29   19G  7.7G   11G  43% /opt/turtle/UISEE_LOGS
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check ftp service status[0m
+
+--------------------------------------------------------------------------------
+● vsftpd.service - vsftpd FTP server
+   Loaded: loaded (/lib/systemd/system/vsftpd.service; enabled; vendor preset: enabled)
+   Active: active (running) since Fri 2019-11-29 16:46:48 CST; 262ms ago
+  Process: 27102 ExecStartPre=/bin/mkdir -p /var/run/vsftpd/empty (code=exited, status=0/SUCCESS)
+ Main PID: 27105 (vsftpd)
+   CGroup: /system.slice/vsftpd.service
+           └─27105 /usr/sbin/vsftpd /etc/vsftpd.conf
+
+Nov 29 16:46:48 master systemd[1]: Starting vsftpd FTP server...
+Nov 29 16:46:48 master systemd[1]: Started vsftpd FTP server.
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check ftp function info[0m
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check enable rsync switch info[0m
+
+--------------------------------------------------------------------------------
+enable rsync
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check change upload logs address to Fang Shan[0m
+
+--------------------------------------------------------------------------------
+spawn sudo switch_upload_logs.sh
+select the projet: 
+     1 Fang Shan (FS) 
+     2 Liu Zhou (LZ) 
+     3 Yu Tong (YT) 
+Pick a project:1
+OK
+USER=worker_fs
+PROJ=log_fs
+[4m[ Check ] : switch uos_log upload address Fang Shan success[0m
+building file list ... done
+2019-11-29/
+2019-11-29/e100.car14\#012e200.car14\#012e100.car31\#012e100.car17_log_2019-11-29-16-45-47_uisee_1118.tar.gz
+
+sent 2,024,103 bytes  received 34 bytes  578,324.86 bytes/sec
+total size is 8,841,243  speedup is 4.37
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check change upload logs address to Liu Zhou[0m
+
+--------------------------------------------------------------------------------
+spawn sudo switch_upload_logs.sh
+select the projet: 
+     1 Fang Shan (FS) 
+     2 Liu Zhou (LZ) 
+     3 Yu Tong (YT) 
+Pick a project:2
+OK
+USER=worker_lz
+PROJ=log_lz
+[4m[ Check ] : switch uos_log upload address Liu Zhou success[0m
+building file list ... done
+./
+2019-11-22/
+2019-11-29/
+2019-11-29/e100.car14\#012e200.car14\#012e100.car31\#012e100.car17_log_2019-11-29-16-45-47_uisee_1118.tar.gz
+ula_upload/
+ula_upload/2019-11-29_10-51-53_home_worker_UISEE_LOGS_2019-11-29_e100.car14\#012e200.car14\#012e100.car31\#012e100.car17_log_2019-11-29-10-51-53_uisee_1118.tar.gz/
+ula_upload/2019-11-29_10-51-53_home_worker_UISEE_LOGS_2019-11-29_e100.car14\#012e200.car14\#012e100.car31\#012e100.car17_log_2019-11-29-10-51-53_uisee_1118.tar.gz/raw/
+ula_upload/2019-11-29_10-51-53_home_worker_UISEE_LOGS_2019-11-29_e100.car14\#012e200.car14\#012e100.car31\#012e100.car17_log_2019-11-29-10-51-53_uisee_1118.tar.gz/raw/uoslog/
+ula_upload/2019-11-29_10-51-53_home_worker_UISEE_LOGS_2019-11-29_e100.car14\#012e200.car14\#012e100.car31\#012e100.car17_log_2019-11-29-10-51-53_uisee_1118.tar.gz/raw/uoslog/e100.car14\#012e200.car14\#012e100.car31\#012e100.car17_log_2019-11-29-10-51-53_uisee_1118.tar.gz -> /home/worker/UISEE_LOGS/2019-11-29/e100.car14\#012e200.car14\#012e100.car31\#012e100.car17_log_2019-11-29-10-51-53_uisee_1118.tar.gz
+
+sent 2,024,128 bytes  received 59 bytes  449,819.33 bytes/sec
+total size is 8,841,243  speedup is 4.37
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check change upload logs address to Yu Tong[0m
+
+--------------------------------------------------------------------------------
+spawn sudo switch_upload_logs.sh
+select the projet: 
+     1 Fang Shan (FS) 
+     2 Liu Zhou (LZ) 
+     3 Yu Tong (YT) 
+Pick a project:3
+OK
+USER=worker_yt
+PROJ=log_yt
+[4m[ Check ] : switch uos_log upload address Yu Tong success[0m
+building file list ... done
+./
+2019-11-29/
+2019-11-29/e100.car14\#012e200.car14\#012e100.car31\#012e100.car17_log_2019-11-29-16-45-47_uisee_1118.tar.gz
+
+sent 2,024,110 bytes  received 41 bytes  578,328.86 bytes/sec
+total size is 8,841,243  speedup is 4.37
+--------------------------------------------------------------------------------
+
+
+[1;34m-->>  Master_Port : Check time sync[0m
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check master port and slave port current time synchronize[0m
+
+--------------------------------------------------------------------------------
+M_port time : Fri Nov 29 16:47:12 CST 2019
+S_port time : Fri Nov 29 16:47:12 CST 2019

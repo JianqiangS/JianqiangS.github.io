@@ -1,0 +1,14 @@
+$JOFF
+$jasc,pashr,0
+$jbin,1,0
+$jbin,69,0
+$jasc,gga,20
+$JASC,GPRMC,20
+$JASC,GPHDT,20
+$JBAUD,115200
+$jdiff,include,all
+$jatt,htau,0
+$JATT,NMEAHE,0
+$JATT,GYROAID,N
+$JATT,TILTAID,N
+$JSAVE

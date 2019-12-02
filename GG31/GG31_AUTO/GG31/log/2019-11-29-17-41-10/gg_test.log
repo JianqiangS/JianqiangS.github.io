@@ -1,0 +1,135 @@
+2019-11-29 17:41:10 : "GG3.1" OSv"2.0.3" system test
+2019-11-29 17:41:13 : "GG3.1" OSv"2.0.3" system test
+
+[1;34m-->>  Master_Port : Check dgps config[0m
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check dgps config baudrate[0m
+
+--------------------------------------------------------------------------------
+./dgps_cfg.sh verstion is 0.1
+Programming via /dev/ttyTHS3 at baudrate=19200bps ...
+Programming via /dev/ttyTHS3 at baudrate=115200bps ...
+Programming via /dev/ttyTHS1 at baudrate=19200bps ...
+Programming via /dev/ttyTHS1 at baudrate=115200bps ...
+Please do reboot!
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check dgps rpk port setting[0m
+
+--------------------------------------------------------------------------------
+set_rtk_port.sh 2015
+#need to specify port number for each car
+rtk_port=2015
+--------------------------------------------------------------------------------
+
+[1;34m-->>  Master_Port : Check dgps location data[0m
+
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check dgps location information (picocom)[0m
+
+--------------------------------------------------------------------------------
+Check /dev/ttyTHS1 data ...
+spawn sudo picocom -b 115200 /dev/ttyTHS1
+picocom v3.1
+
+port is        : /dev/ttyTHS1
+flowcontrol    : none
+baudrate is    : 115200
+parity is      : none
+databits are   : 8
+stopbits are   : 1
+escape is      : C-a
+local echo is  : no
+noinit is      : no
+noreset is     : no
+hangup is      : no
+nolock is      : no
+send_cmd is    : sz -vv
+receive_cmd is : rz -vv -E
+imap is        : 
+omap is        : 
+emap is        : crcrlf,delbs,
+logfile is     : none
+initstring     : none
+exit_after is  : not set
+exit is        : no
+
+^AO
+[4m[ Check ] : dgps output data abnormal[0m
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check dgps lost frames[0m
+
+--------------------------------------------------------------------------------
+Total frames : 0 | Actual frames : 0
+[4m[ Check ] : dgps output frames null[0m
+--------------------------------------------------------------------------------
+
+	[1;32m-->>  Check dgps location infomation (nc)[0m
+
+--------------------------------------------------------------------------------
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+$GPHDT,,T*1B
+$GPGGA,,,,,,0,,,,M,,M,,*66
+$GPRMC,,V,,,,,,,,,,N,U*2A
+--------------------------------------------------------------------------------
+[4m[ Result ] : Log saved to /home/worker/GG31/log/2019-11-29-17-41-10[0m

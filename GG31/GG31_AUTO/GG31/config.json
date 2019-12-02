@@ -1,0 +1,80 @@
+{
+  "switch_apu": 1,
+  "switch_bb": 1,
+  "switch_cdu": 1,
+  "switch_dgps": 1,
+  "switch_net": 1,
+  "switch_ioin": 1,
+  "switch_ioout": 1,
+  "switch_ota": 0,
+  "switch_power": 1,
+  "switch_tx2i": 1,
+  "set_uos_name": "uisee_1118",
+  "excute_num": 1,
+  "para_version": {
+    "hw_type": "GG3.1",
+    "sw_v_apu": "0.3.1",
+    "sw_v_bb": "3.1.4",
+    "sw_v_os": "2.0.4"
+  },
+  "para_apu": {
+    "apu_file_mode": 1
+  },
+  "para_bb": {
+    "bb_date_change": "2019-01-01",
+    "bb_dd_bs": "M",
+    "bb_dd_count": 10,
+    "bb_iperf_band": 200,
+    "bb_iperf_interval": 1,
+    "bb_iperf_time": 5,
+    "bb_ping_num": 3,
+    "bb_ssd_type": "sda"
+  },
+  "para_cdu": {
+    "cdu_dump_num": 1000,
+    "cdu_switch_isp_burn": 0,
+    "cdu_switch_isp_write": 0,
+    "cdu_video0_num": 4,
+    "cdu_video1_num": 4
+  },
+  "para_dgps": {
+    "dgps_rtk_port": 2015
+  },
+  "para_net": {
+    "net_ping_domain": "www.baidu.com",
+    "net_ping_lidar": "192.168.100.201",
+    "net_ping_ip": "8.8.8.8",
+    "net_ping_num_verify": 10,
+    "net_ping_num_stress": 200,
+    "net_wifi_set_user": "UISEE-GUEST",
+    "net_wifi_set_pass": "uiseeWelcome"
+  },
+  "para_ioin": {
+    "ioin_dd_bs": "M",
+    "ioin_dd_count": 10,
+    "ioin_insert_master": {
+      "ioin_ssd_monuted": "/home/worker/disk",
+      "ioin_ssd_type": "sda"
+    },
+    "ioin_insert_slave": {
+      "ioin_ssd_monuted": "/home/worker/disk",
+      "ioin_ssd_type": "sda"
+    }
+  },
+  "para_ioout": {
+    "ioout_harddisk_mounted": "/media",
+    "ioout_harddisk_type": "sdc",
+    "ioout_udisk_mounted": "/media",
+    "ioout_udisk_type": "sdb"
+  },
+  "para_ota": {
+    "ota_uos_name": "uisee_0915"
+  },
+  "para_power": {
+    "power_ping_num": 10
+  },
+  "para_tx2i": {
+    "tx2i_date_change": "2019-01-01",
+    "tx2i_ping_num": 10
+  }
+}
