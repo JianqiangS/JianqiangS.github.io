@@ -1,0 +1,11 @@
+[Unit]
+Description=Monitor Module TEMP Service
+
+[Service]
+WorkingDirectory=/home/worker/GG31_SYSTEM/opt/service_script
+PIDFile=/var/run/module_temp.pid
+ExecStart=/home/worker/GG31_SYSTEM/opt/service_script/service_module_temp.sh start
+ExecStop=/home/worker/GG31_SYSTEM/opt/service_script/service_module_temp.sh stop
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+check_apu/normal
+check_apu/abnormal
+check_can
+check_cdu
+check_cpu
+check_dgps
+check_dsi
+check_gpu
+check_iperf
+check_network
+check_ssd
+check_temp

@@ -1,0 +1,11 @@
+[Unit]
+Description=Monitor Module CPU Service
+
+[Service]
+WorkingDirectory=/home/worker/GG31_SYSTEM/opt/service_script
+PIDFile=/var/run/module_cpu.pid
+ExecStart=/home/worker/GG31_SYSTEM/opt/service_script/service_module_cpu.sh start
+ExecStop=/home/worker/GG31_SYSTEM/opt/service_script/service_module_cpu.sh stop
+
+[Install]
+WantedBy=multi-user.target

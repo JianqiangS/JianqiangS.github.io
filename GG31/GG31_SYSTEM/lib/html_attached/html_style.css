@@ -1,0 +1,48 @@
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* para div: config */
+div {
+	background-color: black;
+}
+/* para h1: config */
+h1 {
+	text-align: center;
+	font-style: normal;	
+	color: white;
+}
+/* para h2: config */
+h2 {
+	text-align: center;
+	color: white;
+}
+/* para h3: config */
+h3 {
+	text-align: center;
+	color: white;
+}
+/* para h4: config */
+h4 {
+	text-align: center;
+	color: white;
+}
+/* para p: config */
+p {
+	font-size: 18px;
+	text-indent: 2em;
+	color: white;
+}
+/* para pre: config */
+pre {
+	font-size: 18px;
+	color: white;
+}
+/* para img: config */
+img {
+	width: 1280px;
+	height: 720px;
+}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Monitor Module NET Service
+
+[Service]
+WorkingDirectory=/home/worker/GG31_SYSTEM/opt/service_script
+PIDFile=/var/run/module_net.pid
+ExecStart=/home/worker/GG31_SYSTEM/opt/service_script/service_module_net.sh start
+ExecStop=/home/worker/GG31_SYSTEM/opt/service_script/service_module_net.sh stop
+
+[Install]
+WantedBy=multi-user.target

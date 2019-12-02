@@ -1,0 +1,11 @@
+[Unit]
+Description=Monitor Module DGPS Service
+
+[Service]
+WorkingDirectory=/home/worker/GG31_SYSTEM/opt/service_script
+PIDFile=/var/run/module_dgps.pid
+ExecStart=/home/worker/GG31_SYSTEM/opt/service_script/service_module_dgps.sh start
+ExecStop=/home/worker/GG31_SYSTEM/opt/service_script/service_module_dgps.sh stop
+
+[Install]
+WantedBy=multi-user.target

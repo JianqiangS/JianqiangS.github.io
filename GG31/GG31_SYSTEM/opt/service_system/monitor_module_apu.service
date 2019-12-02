@@ -1,0 +1,11 @@
+[Unit]
+Description=Monitor Module APU Service
+
+[Service]
+WorkingDirectory=/home/worker/GG31_SYSTEM/opt/service_script
+PIDFile=/var/run/module_apu.pid
+ExecStart=/home/worker/GG31_SYSTEM/opt/service_script/service_module_apu.sh start
+ExecStop=/home/worker/GG31_SYSTEM/opt/service_script/service_module_apu.sh stop
+
+[Install]
+WantedBy=multi-user.target

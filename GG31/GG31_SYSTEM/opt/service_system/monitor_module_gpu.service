@@ -1,0 +1,11 @@
+[Unit]
+Description=Monitor Module GPU Service
+
+[Service]
+WorkingDirectory=/home/worker/GG31_SYSTEM/opt/service_script
+PIDFile=/var/run/module_gpu.pid
+ExecStart=/home/worker/GG31_SYSTEM/opt/service_script/service_module_gpu.sh start
+ExecStop=/home/worker/GG31_SYSTEM/opt/service_script/service_module_gpu.sh stop
+
+[Install]
+WantedBy=multi-user.target

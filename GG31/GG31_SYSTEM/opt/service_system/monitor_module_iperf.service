@@ -1,0 +1,11 @@
+[Unit]
+Description=Monitor Module Iperf Service
+
+[Service]
+WorkingDirectory=/home/worker/GG31_SYSTEM/opt/service_script
+PIDFile=/var/run/module_iperf.pid
+ExecStart=/home/worker/GG31_SYSTEM/opt/service_script/service_module_iperf.sh start
+ExecStop=/home/worker/GG31_SYSTEM/opt/service_script/service_module_iperf.sh stop
+
+[Install]
+WantedBy=multi-user.target
